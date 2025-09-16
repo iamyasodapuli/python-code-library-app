@@ -1,0 +1,28 @@
+version: "3"
+services:
+  database:
+   container_name: db
+   build: ./database
+   ports:
+    - "3306:3306"
+  auth:
+    container_name: auth_service
+    build: ./auth
+    ports:
+      - "5001:5001"
+  book:
+    container_name: book_service
+    build: ./book
+    ports:
+      - "5002:5002"
+  borrow:
+    container_name: borrow_service
+    build: ./borrow
+    ports:
+      - "5003:5003"
+  app:
+    container_name: app
+    build: .
+    ports:
+     - "5000:5000"
+  # repeat for others
