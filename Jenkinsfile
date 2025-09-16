@@ -1,12 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                git url: 'https://github.com/iamyasodapuli/python-code-library-app.git', branch: 'master'
-            }
-        }
-
         stage('Build & Push Images') {
             steps {
                 script {
