@@ -18,7 +18,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Example: use docker-compose or kubectl to deploy
-                sh "docker-compose -f docker-compose.yml up -d"
+                sh "docker-compose -f compose.yml up -d"
             }
         }
     }
