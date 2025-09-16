@@ -4,7 +4,7 @@ pipeline {
         stage('Build & Push Images') {
             steps {
                 script {
-                    def services = ['db','auth', 'book', 'borrow']
+                    def services = ['database','auth', 'book', 'borrow']
                     for (svc in services) {
                         dir(svc) {
                             sh "docker build -t image/${svc}:latest ./${svc}"
