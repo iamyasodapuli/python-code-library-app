@@ -7,7 +7,7 @@ pipeline {
                     def services = ['db','auth', 'book', 'borrow']
                     for (svc in services) {
                         dir(svc) {
-                            sh "docker build -t your-dockerhub/${svc}:latest ./${svc}"
+                            sh "docker build -t image/${svc}:latest ./${svc}"
                   
                         }
                     }
